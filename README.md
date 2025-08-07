@@ -37,32 +37,32 @@ Cabos Wire ou Breadboard wire
 
 LCD 16x2 com potenciômetro
 Pino do LCD Conexão
-"1  (VSS) → GND"
-"2  (VDD) → 5V"
-"3  (VO)  → Pino central do potenciômetro (contraste)"
-"4  (RS)  → Arduino D12"
-"5  (RW)  → GND"
-"6  (E)   → Arduino D11"
-"11 (D4)  → Arduino D5"
-"12 (D5)  → Arduino D4"
-"13 (D6)  → Arduino D3"
-"14 (D7)  → Arduino D2"
-"15 (LED+)  → 5V (com resistor de 220Ω ou direto)"
+"1  (VSS) → GND",
+"2  (VDD) → 5V",
+"3  (VO)  → Pino central do potenciômetro (contraste)",
+"4  (RS)  → Arduino D12",
+"5  (RW)  → GND",
+"6  (E)   → Arduino D11",
+"11 (D4)  → Arduino D5",
+"12 (D5)  → Arduino D4",
+"13 (D6)  → Arduino D3",
+"14 (D7)  → Arduino D2",
+"15 (LED+)  → 5V (com resistor de 220Ω ou direto)",
 "16 (LED-)  → GND"
 
 ## Potenciômetro
 
-Pino esquerdo → GND
-Pino direito → 5V
+Pino esquerdo → GND,
+Pino direito → 5V,
 Pino do meio (central) → LCD pino 3 (VO)
 
 ## Joystick analógico
 
 Pino do Joystick Conexão ao Arduino
-GND  → GND
-+5V  → 5V
-VRy  → A1
-VRx  → (não utilizado neste projeto)
+GND  → GND,
++5V  → 5V,
+VRy  → A1,
+VRx  → (não utilizado neste projeto),
 SW   → (opcional)
 
 ## Código
