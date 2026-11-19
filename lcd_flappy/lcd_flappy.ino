@@ -9,6 +9,9 @@ int obstaclePos = 15;
 int obstacleLine = 0; 
 
 bool gameOver = false;
+unsigned long lastMove = 0;
+unsigned long gameOverAt = 0;
+unsigned long score = 0;
 
 void setup() {
   lcd.begin(16, 2);
@@ -20,11 +23,7 @@ void setup() {
 
 void loop() {
   if (gameOver) {
-    lcd.clear();
-    lcd.setCursor(3, 0);
-    lcd.print("GAME OVER!");
-    delay(2000);
-    resetGame();
+    if (millis() - gameOverAt >= 2000) resetGame();
     return;
   }
 
@@ -36,9 +35,16 @@ void loop() {
     playerPos = 1; // Linha de baixo
   }
 
+  if (millis() - lastMove < 300) return;
+  lastMove = millis();
+
   // Verifica colisão
   if (obstaclePos == 0 && obstacleLine == playerPos) {
     gameOver = true;
+    gameOverAt = millis();
+    lcd.clear(); lcd.print("GAME OVER!");
+    lcd.setCursor(0, 1); lcd.print("Pontos: "); lcd.print(score);
+    return;
   }
 
   
@@ -54,11 +60,12 @@ void loop() {
     lcd.print("#");
     obstaclePos--;
   } else {
+    score++;
     obstaclePos = 15;
     obstacleLine = random(0, 2); // Nova linha aleatória
   }
 
-  delay(300);
+
 }
 
 void resetGame() {
@@ -66,4 +73,6 @@ void resetGame() {
   obstaclePos = 15;
   obstacleLine = 0;
   gameOver = false;
+  score = 0;
+  lastMove = millis();
 }
