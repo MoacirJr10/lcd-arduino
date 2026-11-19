@@ -79,7 +79,8 @@ graph LR
     L12 --> D4
     L13 --> D3
     L14 --> D2
-    L15 --> V5V1
+    L15 --> RES[Resistor 220 ohms]
+    RES --> V5V1
     L16 --> GND1
 ```
 
@@ -169,7 +170,7 @@ graph LR
 ## ⚡ Resumo das Conexões
 
 ### Alimentação
-- **5V** → LCD VDD, LCD LED+, Potenciômetro (direito), Joystick +5V
+- **5V** → LCD VDD, LCD LED+ (via resistor), Potenciômetro (direito), Joystick +5V
 - **GND** → LCD VSS, LCD RW, LCD LED-, Potenciômetro (esquerdo), Joystick GND
 
 ### Sinais Digitais
@@ -188,5 +189,9 @@ graph LR
 
 ## Código
 
-O código completo do jogo está no arquivo: lcd_flappy.ino
+O código completo do jogo está no arquivo: `lcd_flappy/lcd_flappy.ino`
 
+
+## Abrir os jogos
+
+Cada sketch está em pasta própria: `lcd_flappy/lcd_flappy.ino` ou `doom/doom.ino`. Abra apenas um por vez na IDE Arduino. O diagrama acima é do Flappy; o Doom possui controles próprios e deve ser testado separadamente.
